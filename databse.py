@@ -20,3 +20,14 @@ connection_config_dict = {
 def databaseConnection():
     x = mysql.connector.connect(**connection_config_dict)
     return x
+
+
+def get_connection_error_message(e):
+    if e.errno == 1045:
+        return "User name or password is incorrect"
+    elif e.errno == 1049:
+        return "Check the database name"
+    elif e.errno == 2003:
+        return "Check server name"
+    else:
+        return "Unknown error"

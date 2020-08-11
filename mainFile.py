@@ -35,14 +35,7 @@ except Error as e:
     msg = 'Failure in connecting to database. Error: {0}'.format(e)
     print(msg)
     # print(e.errno)
-    if e.errno == 1045:
-        print("User name or password is incorrect")
-    elif e.errno == 1049:
-        print("Check the database name")
-    elif e.errno == 2003:
-        print("Check server name")
-    else:
-        print("Unknown error")
+    print(databse.get_connection_error_message(e))
 # finally:
 # if (connection.is_connected()):
 #     cursor.close()
