@@ -3,18 +3,13 @@ import temp
 import mysql.connector
 import time
 import json
+import databse
 from mysql.connector import Error
 
 try:
-    with open('database.json') as f:
-        database = json.load(f)
 
     # load mysql connector        python -m pip install mysql-connector-python
-    connection = mysql.connector.connect(host=database['host'],
-                                         database=database['database'],
-                                         user=database['user'],
-                                         password=database['password'])
-
+    connection = databse.databaseConnection()
     if connection.is_connected():
         db_Info = connection.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
