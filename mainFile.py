@@ -1,4 +1,4 @@
-from main_area import temp
+import temp
 # working
 import mysql.connector
 import time
