@@ -1,0 +1,23 @@
+from tkinter import *
+root = Tk()
+btn_column = Button(root, text="This is column 2")
+btn_column.grid(column=2)
+btn_columnspan = Button(root, text="With columnspan of 4")
+btn_columnspan.grid(columnspan=4)
+
+
+btn_ipadx = Button(root, text="padding horizontally ipadx of 3")
+btn_ipadx.grid(ipadx=3)
+# btn_ipady = Button(root, text="padding vertically ipady of 3")
+# btn_ipady.grid(ipady=3)
+# btn_padx = Button(root, text="padx 2")
+# btn_padx.grid(padx=4)
+# btn_pady = Button(root, text="pady of 2")
+# btn_pady.grid(pady=2)
+# btn_row = Button(root, text="This is row 2")
+# btn_row.grid(row=2)
+# btn_rowspan = Button(root, text="With Rowspan of 3")
+# btn_rowspan.grid(rowspan=3)
+# btn_sticky = Button(root, text="Sticking to north-east")
+# btn_sticky.grid(sticky=NE)
+root.mainloop()

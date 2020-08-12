@@ -8,6 +8,10 @@ import json
 import databse
 from mysql.connector import Error
 
+gray = ('#AFABAB', '#A29F9F', '#807E7E')
+yellow = ('#F9C872', '#FAC66A')
+white = ('#FAFAF0', '#FBFBEB')
+
 try:
 
     # load mysql connector        python -m pip install mysql-connector-python
@@ -52,8 +56,9 @@ root.resizable(width=FALSE, height=FALSE)
 root.geometry('{}x{}'.format(1350, 650))
 
 # create all of the main containers
-top_frame = Frame(root, bg='cyan', pady=3, padx=50)
-center_frame = Frame(root, bg='gray2', padx=3, pady=3)
+top_frame = Frame(root, bg=yellow[0], pady=3, padx=50,height=100)
+top_frame.grid_propagate(0)
+center_frame = Frame(root, bg=gray[0], borderwidth=1)
 btm_frame = Frame(root, bg='white', width=1350, height=45, pady=3)
 btm_frame2 = Frame(root, bg='green', width=1350, height=60, pady=3)
 
@@ -64,7 +69,7 @@ root.grid_columnconfigure(0, weight=1)
 top_frame.grid(row=0, sticky="ew")
 center_frame.grid(row=1, sticky="nsew")
 btm_frame.grid(row=3, sticky="ew")
-btm_frame2.grid(row=4, sticky="ew")
+# btm_frame2.grid(row=4, sticky="ew")
 
 # create the widgets for the top frame
 model_label = Label(top_frame, text='Model Dimensions')
@@ -84,15 +89,33 @@ entry_L.grid(row=1, column=3)
 center_frame.grid_rowconfigure(0, weight=1)
 center_frame.grid_columnconfigure(1, weight=1)
 
-ctr_left = Frame(center_frame, bg='blue', width=100)
-ctr_mid = Frame(center_frame, bg='yellow', padx=3, pady=3)
-ctr_right = Frame(center_frame, bg='green', width=100, padx=3, pady=3)
-
+ctr_left = Frame(center_frame, bg=gray[0], width=200)
+ctr_mid = Frame(center_frame, bg=white[0], padx=0, pady=0)
+# ctr_right = Frame(center_frame, bg='green', width=100, padx=3, pady=3)
 ctr_left.grid(row=0, column=0, sticky="ns")
 ctr_mid.grid(row=0, column=1, sticky="nsew")
-ctr_right.grid(row=0, column=2, sticky="ns")
+# ctr_right.grid(row=0, column=2, sticky="ns")
 
 
+btn_column = Button(ctr_mid, text="I'm in column 3")
+btn_column.grid(column=3)
 
+btn_columnspan = Button(ctr_mid, text="I have a columnspan of 3")
+btn_columnspan.grid(columnspan=3)
+
+btn_ipadx = Button(ctr_mid, text="ipadx of 4")
+btn_ipadx.grid(ipadx=4)
+
+btn_ipady = Button(ctr_mid, text="ipady of 4")
+btn_ipady.grid(ipady=4)
+
+btn_row = Button(ctr_mid, text="I'm in row 2")
+btn_row.grid(row=2)
+
+btn_rowspan = Button(ctr_mid, text="Rowspan of 2")
+btn_rowspan.grid(rowspan=2)
+
+btn_sticky = Button(ctr_mid, text="I'm stuck to north-east")
+btn_sticky.grid(sticky=NE)
 
 mainloop()
