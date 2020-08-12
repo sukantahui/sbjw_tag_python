@@ -49,13 +49,13 @@ print("Working area")
 root = Tk()
 # root.geometry("1350x650")
 root.resizable(width=FALSE, height=FALSE)
-root.geometry('{}x{}'.format(460, 350))
+root.geometry('{}x{}'.format(1350, 650))
 
 # create all of the main containers
-top_frame = Frame(root, bg='cyan', width=450, height=50, pady=3)
-center = Frame(root, bg='gray2', width=50, height=40, padx=3, pady=3)
-btm_frame = Frame(root, bg='white', width=450, height=45, pady=3)
-btm_frame2 = Frame(root, bg='lavender', width=450, height=60, pady=3)
+top_frame = Frame(root, bg='cyan', width=1350, height=350, pady=3)
+center = Frame(root, bg='gray2', width=1350, padx=3, pady=3)
+btm_frame = Frame(root, bg='white', width=1350, height=45, pady=3)
+btm_frame2 = Frame(root, bg='green', width=1350, height=60, pady=3)
 
 # layout all of the main containers
 root.grid_rowconfigure(1, weight=1)
@@ -84,7 +84,7 @@ entry_L.grid(row=1, column=3)
 center.grid_rowconfigure(0, weight=1)
 center.grid_columnconfigure(1, weight=1)
 
-ctr_left = Frame(center, bg='blue', width=100, height=190)
+ctr_left = Frame(center, bg='blue', width=300, height=190)
 ctr_mid = Frame(center, bg='yellow', width=250, height=190, padx=3, pady=3)
 ctr_right = Frame(center, bg='green', width=100, height=190, padx=3, pady=3)
 
